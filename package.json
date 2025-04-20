@@ -1,0 +1,14 @@
+{
+  "name": "reactjs-cursor-ai",
+  "version": "1.0.0",
+  "description": "Full-stack MERN application",
+  "scripts": {
+    "start": "concurrently \"npm run start:fe\" \"npm run start:be\"",
+    "start:fe": "cd FE && npm run dev",
+    "start:be": "cd BE && npm run dev",
+    "install:all": "npm install && cd FE && npm install && cd ../BE && npm install"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
