@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavigationBar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Categories from "./components/Categories";
+import ProductsPage from "./components/ProductsPage";
 
 function App() {
   return (
@@ -11,8 +12,18 @@ function App() {
       <div className="App">
         <NavigationBar />
         <main>
-          <Hero />
-          <Categories />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <Categories />
+                </>
+              }
+            />
+            <Route path="/products" element={<ProductsPage />} />
+          </Routes>
         </main>
       </div>
     </Router>
