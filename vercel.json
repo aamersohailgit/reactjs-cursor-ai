@@ -1,24 +1,7 @@
 {
-  "version": 2,
-  "buildCommand": "npm install && cd FE && npm install && npm run build",
-  "outputDirectory": "FE/dist",
-  "builds": [
-    {
-      "src": "BE/src/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["BE/**"]
-      }
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/BE/src/server.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "buildCommand": "cd FE && npm install && npm run build",
+  "outputDirectory": "FE/dist"
 }
