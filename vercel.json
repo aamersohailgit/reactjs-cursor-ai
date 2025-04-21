@@ -3,13 +3,17 @@
   "builds": [
     {
       "src": "BE/src/server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["BE/**"]
+      }
     },
     {
       "src": "FE/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "distDir": "dist",
+        "buildCommand": "cd FE && npm install && npm run build"
       }
     }
   ],
